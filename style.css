@@ -6,30 +6,31 @@
     color: #fff;
 }
 html,body{
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 #cursor{
-    height: 20px;
-    width: 20px;
+    height: 1.2rem;
+    width: 1.2rem;
     background-color: #95C11E; 
     border-radius: 50%;
     position: fixed;
     z-index: 99;
 }
 #cursor-blur{
-    height: 300px;
-    width: 300px;
+    height: 20rem;
+    width: 20rem;
     background-color: #587607; 
     border-radius: 50%;
     position: fixed;
-    filter:blur(100px);
+    filter:blur(7rem);
     z-index: 9;
 }
 #nav{
    height: 65px; 
    width: 100%;
    display: flex;
+   object-fit: cover;
    align-items: center;
    padding: 0 100px;
    gap: 50px;
@@ -58,7 +59,6 @@ video {
     position: relative;
     background-color: rgba(0,0,0,0.50);
 
-
 }
 #page1{
     height: 100vh;
@@ -71,7 +71,7 @@ video {
     text-align: center;
 }
 #page1 h1{
-    font-size: 140px;
+    font-size: clamp(1.5rem, calc(8vw + 0.4rem), 10rem);
     font-weight: 900;
     position: relative;
 }
@@ -81,23 +81,25 @@ video {
     color: black;
     top: -5px;
     left: -5px;    
-    -webkit-text-stroke: 2px #95C11E;
+    -webkit-text-stroke: 0.09rem #95C11E;
     z-index: -1;
 }
 #page1 h2{
-    font-size: 30px;
+    font-size: clamp(1rem, calc(1vw + 0.8rem), 2rem);
     font-weight: 800px;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 #page1 p{
-    font-size: 20px;
+    font-size: clamp(1rem, calc(1.5vw + 0.01rem), 2rem);
     font-weight: 500px;
     width: 40%;
 }
 #page2{
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     z-index: 10; 
 }
 #scroller{
@@ -120,10 +122,10 @@ video {
 }
 #scroller h3{
     display: inline-block;
-    font-size: 120px;
+    font-size: clamp(1.5rem, calc(8vw + 0.4rem), 10rem);
     font-weight: 900;
     font-family: system-ui;
-    margin-right: 20px;
+    margin-right: 3rem;
     color: black;
     cursor: default;
     -webkit-text-stroke: 0.5px white;
@@ -137,36 +139,39 @@ video {
      to{transform: translate(-100%);}
 }
 #about-us{
-    height: 40vh;
+    height: 40%;
     width: 100%;
     display: flex;
-    padding: 0 20px;
+    padding: min(5em, 8%);
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 #about-us h2{
-   font-size: 54px;
+   font-size: clamp(1rem, calc(4vw + 0.8rem), 3rem);
    font-weight: 900;
-   margin-top: 140px;
-   margin-bottom: 30px;
+   margin-top: 10rem;
+   margin-bottom: 1rem;
 }
-#about-us img{
-    height: 165px;
-    width: 165px;
-    margin-top: 200px;
+#pic1{
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
-    object-fit: cover;
+    margin-top: 30vh;
+}
+#card-tag {
+    margin-left: 30px;
+    margin-top: 15vh;
+    height: 30vh;
 }
 #about-us-in{
-    width: 40%;
+    width: 50%;
     text-align: center;
 }
 #about-us-in p{
-    font-size: 20px;
-    line-height: 30px;
+    font-size: clamp(1rem, calc(1.5vw + 0.01rem), 2rem);
+    line-height: 1.8rem;
 }
 #page3{
-    height: 100vh;
     width: 100%;
     z-index: 10; 
 }
@@ -180,16 +185,10 @@ video {
     z-index: 10;
     gap: 70px;
 }
-#page2 img{
-    height: 30vh;
-    width: 25vh;
-    margin-left: 100px;
-    margin-top: 170px;
-}
 .card{
-    height: 100%;
     width: 25%;
-    border-radius: 15px;
+    height: 100%;
+    border-radius: 10px;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -207,16 +206,16 @@ video {
 .overlay{
     height: 100%;
     width: 100%;
-    border-radius: 15px;
-    padding-top: 120px;
+    border-radius: 10px;
+    padding-top: 20vh;
     background-color: #95C11E;
     opacity:0;
     transition: all ease 0.5s;
 }
 .overlay h4{
-    font-size: 40px;
+    font-size: 1.5rem;
     margin-left: 30px;
-    margin-right: 30px;
+    margin-right: 30px; 
     font-weight: 900;
     text-transform: uppercase;
     color: black;
@@ -225,8 +224,9 @@ video {
     color: black;
     margin-left: 30px;
     margin-right: 30px;
-    font-size: 25px; 
+    font-size: clamp(1rem, calc(2vw + 1rem), 1.5rem); 
     font-weight: 500;
+    padding-bottom: 20px;
     margin-top: 30px;
 }
 .card:hover .overlay{
@@ -238,15 +238,16 @@ video {
 #green-div{
     height: 35vh;
     display: flex;
-    margin-top: 80px;
+    margin-top: 20vh;
+    background-color: black ;
     background:linear-gradient(to left bottom,#039c3d,#95c11e);
     justify-content: space-between;
     align-items: center;
 }
 #green-div h4{
     width: 50%;
-    font-size: 30px;
-    line-height: 50px;
+    font-size: clamp(1rem, calc(2vw + 0.5rem), 2rem);
+    line-height: 8vh;
     text-align: center;
     color: black;
     text-transform: uppercase;
@@ -254,7 +255,7 @@ video {
 #green-div img{
     height: 100%;
     object-fit: cover;
-    width: 180px;
+    width: 12vw;
 }
 #paragraph{
     height: 100vh;
@@ -266,14 +267,14 @@ video {
     justify-content: center;
 }
 #paragraph p{
-    font-size: 30px;
+    font-size: clamp(1rem, calc(1.5vw + 0.01rem), 2rem);
     font-weight: 700;
     width: 55%;
-    line-height: 45px;
+    line-height: 2rem;
     text-align: center;
 }
 #paragraph img{
-    height: 50px;
+    height: 2rem;
     position: absolute;
 }
 #paragraph #colon1{
@@ -284,8 +285,64 @@ video {
     right: 15%;
     bottom: 20%;
 }
-/* #page4{
-    height: 50vh;
-    width: 100%;
-    background-color: #ba0505;
-} */
+
+/*  responsive Small devises */
+
+@media(max-width: 700px) {
+       #card-container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+       } 
+       .overlay{
+        padding-top: 10px;
+       }
+       /* .overlay p{
+       } */
+       #page1 h1::before{
+        top: -3px;
+        left: -3px;
+       }
+       #page1 p{
+        width: 90%;
+       }
+       #about-us{
+        display: flex;
+        flex-direction: column;
+       }
+       #about-us-in{
+        width: 100%;
+       }
+       #pic1{
+        margin-top: 20vh;
+       }
+       #card-tag {
+        max-width: 80%;
+        height: auto;
+        margin-left: 10vw;
+        margin-top: 20vh;
+       }
+       .card{
+        width: 80%;
+        height: auto;
+       }
+       #green-div h4{
+        line-height: 5vh;
+       }
+       .overlay{
+        width: 100%;
+        height: auto;
+       }
+       #paragraph p{
+        width: 80%;
+       }
+       #paragraph #colon1{
+        left: 20%;
+        top: 12%;
+       }
+       #paragraph #colon2{
+        right: 20%;
+        bottom: 12%;
+       }
+
+  }
