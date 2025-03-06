@@ -1,2 +1,2 @@
 # Project
-Front end Project
+Frontend Project basics
